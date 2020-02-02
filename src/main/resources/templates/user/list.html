@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en" th:replace="main/public :: #public_head">
+</head>
+<body>
+<header class="publicHeader" th:replace="main/public :: #public_header">
+</header>
+<section class="publicTime" th:replace="main/public :: #public_time">
+</section>
+    <section class="publicMian ">
+        <div class="left" th:replace="main/public :: #public_left(activeUri='user')">
+        </div>
+        <div class="right">
+            <div class="location">
+                <strong th:replace="main/public :: #public_location"></strong>
+                <span>Users</span>
+            </div>
+            <form id="searchUser" th:action="@{/users}" th:method="get">
+                <div class="search">
+                    <span>Username：</span>
+                    <input type="text" placeholder="username" name="username"/>
+                    <input type="button" value="Search" onclick="$('#searchUser').submit()"/>
+                    <a th:href="@{/add}">Add Users</a>
+                </div>
+            </form>
+
+            <!--用户-->
+            <table class="providerTable" cellpadding="0" cellspacing="0">
+                <tr class="firstTr">
+                    <th width="10%">Username</th>
+                    <th width="20%">Realname</th>
+                    <th width="10%">Gender</th>
+                    <th width="10%">Birthday</th>
+                    <th width="10%">UserType</th>
+                    <th width="30%">Operation</th>
+                </tr>
+                <tr th:each="u : ${users}">
+                    <td th:text="${u.username}"></td>
+                    <td th:text="${u.realName}"></td>
+                    <td th:text="${u.gender == 1 ? 'female' : 'male'}"></td>
+                    <td th:text="${#dates.format(u.birthday,'yyyy/mm/dd')}"></td>
+                    <td th:text="${u.userType == 1 ? 'admin' : (u.userType == 2 ? 'manager' : 'user')}"></td>
+                    <td>
+                        <a th:href="@{/user/} + ${u.id}"><img src="../img/read.png" alt="view" /></a>
+                        <a th:href="@{/user/} + ${u.id} + '?type=update'"><img src="../img/xiugai.png" alt="update"/></a>
+                        <a th:attr="del_uri=@{/user/} + ${u.id}" class="delete"><img src="../img/schu.png" alt="delete"/></a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+
+	<!--点击删除按钮后弹出的页面-->
+	<div class="zhezhao"></div>
+	<form method="post" id="deleteForm" th:replace="main/public :: #deleteForm">
+	</form>
+
+<footer class="footer" th:replace="main/public :: #public_footer"></footer>
+
+<script th:replace="main/public :: #public_jquery"></script>
+<script src="../js/js.js"></script>
+<!--
+	<script src="js/time.js"></script>
+	-->
+</body>
+</html>

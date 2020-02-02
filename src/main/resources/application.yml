@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://127.0.0.1:3306/bill
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis:
+  #mapper config
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  #mybatis config
+  config-location: classpath:mybatis/mybatis-config.xml
+
+logging:
+  level:
+    com.mengxuegu.springboot.mapper: debug
