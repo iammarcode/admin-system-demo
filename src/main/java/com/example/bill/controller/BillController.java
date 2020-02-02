@@ -5,6 +5,7 @@ import com.example.bill.entities.BillProvider;
 import com.example.bill.entities.Provider;
 import com.example.bill.mapper.BillMapper;
 import com.example.bill.mapper.ProviderMapper;
+import com.example.bill.service.impl.BillServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,9 @@ public class BillController {
 
     @Autowired
     ProviderMapper providerMapper;
+
+//    @Autowired
+//    BillServiceImpl billService;
 
     @Autowired
     BillMapper billMapper;
@@ -68,6 +72,7 @@ public class BillController {
 
         logger.info("bill:__" + bill);
 
+
         billMapper.updateBill(bill);
 
         return "redirect:bills";
@@ -93,6 +98,9 @@ public class BillController {
 
     @PostMapping("/bill")
     public String add(Bill bill) {
+
+//        billService.addBill(bill);
+
         billMapper.addBill(bill);
 
         return "redirect:bills";
