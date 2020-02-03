@@ -2,15 +2,15 @@ package com.example.bill.mapper;
 
 
 import com.example.bill.entities.Bill;
-import com.example.bill.entities.BillProvider;
+import com.example.bill.entities.BillVendor;
 
 import java.util.List;
 
 public interface BillMapper {
 
-    List<BillProvider> getBills(Bill bill);
+    List<BillVendor> getBills(Bill bill);
 
-    BillProvider getBillByBid(Integer bid);
+    BillVendor getBillByBid(Integer bid);
 
     int addBill(Bill bill);
 

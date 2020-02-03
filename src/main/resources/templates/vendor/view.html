@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en" th:replace="main/public :: #public_head">
+</head>
+<body>
+<!--Header-->
+<header class="publicHeader" th:replace="main/public :: #public_header">
+</header>
+<!--Time-->
+<section class="publicTime" th:replace="main/public :: #public_time">
+</section>
+<!--Main-->
+<section class="publicMian ">
+    <div class="left" th:replace="main/public :: #public_left(activeUri='vendor')">
+    </div>
+    <div class="right">
+        <div class="location">
+            <strong>Location:</strong>
+            <span>vendor >> check</span>
+        </div>
+        <div class="vendorView">
+            <p><strong>vendor name：</strong><span th:text="${vendor.vendorName}"></span></p>
+            <p><strong>telephone：</strong><span th:text="${vendor.telephone}"></span></p>
+            <p><strong>fax：</strong><span th:text="${vendor.fax}"></span></p>
+            <p><strong>describe：</strong><span th:text="${vendor.describe}"></span></p>
+
+            <a th:href="@{/vendors}">back</a>
+        </div>
+    </div>
+</section>
+<footer class="footer" th:replace="main/public :: #public_footer">
+</footer>
+</body>
+</html>

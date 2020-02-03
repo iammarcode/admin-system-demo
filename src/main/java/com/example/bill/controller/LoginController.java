@@ -32,7 +32,7 @@ public class LoginController {
             return "main/login";
         }
 
-        map.put("msg", "用户名或者密码错误");
+        map.put("msg", "username或者密码错误");
         return "main/login";
     }
 
