@@ -15,7 +15,7 @@
     </div>
     <div class="right">
         <div class="location">
-            <strong th:replace="main/public :: #public_location"></strong>
+            <strong>Your Location:</strong>
             <span>Users >> update</span>
         </div>
         <div class="vendorAdd">
@@ -47,9 +47,9 @@
                 </div>
                 <div>
                     <label >User Type：</label>
-                    <input type="radio" name="userType" value="1" th:checked="${user.userType == 1}" />Admin
-                    <input type="radio" name="userType" value="2" th:checked="${user.userType == 2}" />Manager
-                    <input type="radio" name="userType" value="3" th:checked="${user.userType == 3}" />User
+                    <input type="radio" name="role" value="1" th:checked="${user.role == 1}" />Admin
+                    <input type="radio" name="role" value="2" th:checked="${user.role == 2}" />Manager
+                    <input type="radio" name="role" value="3" th:checked="${user.role == 3}" />User
                 </div>
                 <div class="vendorAddBtn">
                     <input type="button" value="save" onclick="$('#updateForm').submit()"/>

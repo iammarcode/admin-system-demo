@@ -3,11 +3,10 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.bill.mapper.VendorMapper">
-    <!--    </delete>-->
     <select id="getVendors" resultType="com.example.bill.entities.Vendor">
         select * from vendor where 1=1
         <if test="vendorName != null and vendorName != ''">
-            and vendorName like '%${vendorName}%'
+            and vendor_name like '%${vendorName}%'
         </if>
     </select>
 
@@ -16,13 +15,13 @@
     </select>
 
     <insert id="addVendor">
-        INSERT INTO vendor ( vendorName, people, telephone, address, fax, `describe`, created_date)
-        VALUES ( #{vendorName}, #{people}, #{telephone}, #{address}, #{fax}, #{describe}, now())
+        INSERT INTO vendor ( `vendor_name`, `telephone`, `address`, `fax`, `describe`, `created_date`)
+        VALUES ( #{vendorName}, #{telephone}, #{address}, #{fax}, #{describe}, now())
     </insert>
 
     <update id="updateVendor">
         UPDATE vendor
-        SET  vendorName=#{vendorName}, people=#{people},
+        SET  vendor_name=#{vendorName},
          telephone=#{telephone}, address=#{address}, fax=#{fax}, `describe`=#{describe}, created_date=now()
         WHERE vid=#{vid}
     </update>

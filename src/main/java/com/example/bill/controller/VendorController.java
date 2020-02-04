@@ -36,8 +36,6 @@ public class VendorController {
 
         Vendor vendor = vendorMapper.getVendorByPid(vid);
 
-        logger.info("_test_vendorById_:" + vendor);
-
         map.put("vendor", vendor);
 
         return "vendor/" + type;
@@ -45,7 +43,6 @@ public class VendorController {
 
     @PostMapping("/vendor")
     public String add(Vendor vendor) {
-        logger.info("_add_vendor_:" + vendor);
 
         vendorMapper.addVendor(vendor);
 

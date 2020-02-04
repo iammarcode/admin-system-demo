@@ -59,7 +59,6 @@ public class UserController {
 //
     @DeleteMapping("/user/{id}")
     public String delete(@PathVariable("id") Integer id) {
-        logger.info("删除操作, id=" + id);
 
         userMapper.deleteUserById(id);
 

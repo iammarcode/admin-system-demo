@@ -11,28 +11,23 @@ public class User {
     private String password;
     private Integer gender;
     private Date birthday;
-    private Integer userType;
+    private Integer role;
 
-    public User() {
-    }
-
-    public User(String username, Integer gender) {
-        this.username = username;
-        this.gender = gender;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public User(Integer id, String username, String realName, String password, Integer gender, Integer userType) {
+    public User(Integer id, String username, String realName, String password, Integer gender, Date birthday, Integer role) {
         this.id = id;
         this.username = username;
         this.realName = realName;
         this.password = password;
         this.gender = gender;
-        this.birthday = new Date();
-        this.userType = userType;
+        this.birthday = birthday;
+        this.role = role;
+    }
+
+    public User() {
+    }
+
+    public Integer getId() {
+        return id;
     }
 
     public void setId(Integer id) {
@@ -79,12 +74,12 @@ public class User {
         this.birthday = birthday;
     }
 
-    public Integer getUserType() {
-        return userType;
+    public Integer getRole() {
+        return role;
     }
 
-    public void setUserType(Integer userType) {
-        this.userType = userType;
+    public void setRole(Integer role) {
+        this.role = role;
     }
 
     @Override
@@ -96,7 +91,7 @@ public class User {
                 ", password='" + password + '\'' +
                 ", gender=" + gender +
                 ", birthday=" + birthday +
-                ", userType=" + userType +
+                ", role=" + role +
                 '}';
     }
 }

@@ -45,6 +45,7 @@
                 <th width="10%">Id</th>
                 <th width="10%">Total</th>
                 <th width="10%">Paid</th>
+                <th width="20%">Vendor</th>
                 <th width="10%">Created Time</th>
                 <th width="30%">Operation</th>
             </tr>
@@ -52,6 +53,7 @@
                 <td th:text="${b.bid}"></td>
                 <td th:text="${b.total}"></td>
                 <td th:text="${b.paid == 1 ? 'Yes' : 'No'}"></td>
+                <td th:text="${b.vendorName}"></td>
                 <td th:text="${#dates.format(b.createdDate, 'yyyy-MM-dd')}"></td>
                 <td>
                     <a th:href="@{/bill/} + ${b.bid}"><img th:src="@{/img/read.png}" src="../img/read.png"/></a>

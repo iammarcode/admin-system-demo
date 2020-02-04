@@ -19,8 +19,8 @@
             <span>Bills >> Update</span>
         </div>
         <div class="vendorAdd">
-            <form th:action="@{/bill}" th:method="post" id="updateForm">
-                <input th:type="hidden" th:name="_method" value="put">
+            <form th:action="@{/bill}" method="post" id="updateForm">
+                <input th:type="hidden" name="_method" value="PUT">
                 <input th:type="hidden" name="bid" th:value="${billVendor.bid}">
                 <div>
                     <label for="total">Total：</label>
@@ -53,7 +53,7 @@
 <footer class="footer" th:replace="main/public :: #public_footer">
 </footer>
 
-<script src="../js/jquery.js"></script>
+<script th:src="@{/webjars/jquery/3.3.1/jquery.js}"></script>
 
 </body>
 </html>
