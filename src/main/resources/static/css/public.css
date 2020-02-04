@@ -107,15 +107,8 @@ li{
     color: #fff;
     background: #60b3e7;
     margin: 10px  auto;
-    /*box-shadow:4px 4px rgba(212,212,212,0.7);*/
 }
-/*.leftH2 span{*/
-/*    width: 10px;*/
-/*    height: 10px;*/
-/*    display: inline-block;*/
-/*    background: radial-gradient(#70c2f4,#3a8dc1, #035384, #4696c7,#83d1f5);*/
-/*    border-radius: 50%;*/
-/*}*/
+
 .span1{
     margin-right: 10px;
 }
