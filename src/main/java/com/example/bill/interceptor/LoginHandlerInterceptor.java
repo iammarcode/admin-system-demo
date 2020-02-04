@@ -14,7 +14,7 @@ public class LoginHandlerInterceptor implements HandlerInterceptor {
             return true;
         }
 
-        request.setAttribute("msg", "No permittion, Login Please");
+        request.setAttribute("msg", "No permittion, login please");
         request.getRequestDispatcher("/index.html").forward(request, response);
         return false;
     }

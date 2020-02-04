@@ -62,10 +62,7 @@ public class BillController {
     @PutMapping("/bill")
     public String update(Bill bill) {
 
-        System.out.println("update--------");
-
         billMapper.updateBill(bill);
-
 
         return "redirect:bills";
     }
@@ -90,11 +87,7 @@ public class BillController {
     @PostMapping("/bill")
     public String add(Bill bill) {
 
-        System.out.println("add--------");
-
         billMapper.addBill(bill);
-
-
 
         return "redirect:bills";
     }

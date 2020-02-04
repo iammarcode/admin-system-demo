@@ -43,9 +43,9 @@
                 <td th:text="${v.fax}"></td>
                 <td th:text="${#dates.format(v.createdDate, 'yyyy-MM-dd')}"></td>
                 <td>
-                    <a th:href="@{/vendor/} + ${v.vid}"><img th:src="@{/img/read.png}"/></a>
-                    <a th:href="@{/vendor/} + ${v.vid} + @{?type=update}"><img th:src="@{/img/xiugai.png}"/></a>
-                    <a th:attr="del_uri=@{/vendor/} + ${v.vid}" class="delete" ><img th:src="@{/img/schu.png}"/></a>
+                    <a th:href="@{/vendor/} + ${v.vid}"><img th:src="@{/img/check.png}"/></a>
+                    <a th:href="@{/vendor/} + ${v.vid} + @{?type=update}"><img th:src="@{/img/update.png}"/></a>
+                    <a th:attr="del_uri=@{/vendor/} + ${v.vid}" class="delete" ><img th:src="@{/img/delete.png}"/></a>
                 </td>
             </tr>
         </table>

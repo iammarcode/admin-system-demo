@@ -36,8 +36,6 @@ public class UserController {
 
         User user = userMapper.getUserById(id);
 
-        logger.info("user:" + user);
-
         map.put("user", user);
 
         return "user/" + type;
@@ -46,8 +44,6 @@ public class UserController {
 //
     @PutMapping("/user")
     public String update(User user) {
-
-        logger.info("user:__" + user);
 
         userMapper.updateUser(user);
 
@@ -89,7 +85,6 @@ public class UserController {
     @ResponseBody
     @GetMapping("/user/pwd/{oldPwd}")
     public Boolean checkPwd(HttpSession session, @PathVariable("oldPwd") String oldPwd) {
-        logger.info("oldPassword:" + oldPwd);
 
         User user = (User) session.getAttribute("loginUser");
 
@@ -102,7 +97,6 @@ public class UserController {
 
     @PostMapping("/user/pwd")
     public String updatePwd(HttpSession session, String password) {
-        logger.info("password:" + password);
 
         User user =(User) session.getAttribute("loginUser");
 

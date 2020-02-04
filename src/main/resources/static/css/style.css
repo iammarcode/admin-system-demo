@@ -6,7 +6,6 @@ a {
 	text-decoration:none;
 	color: white;
 }
-/*登录页面*/
 .login_bg {
     background: url("../img/loginBg.jpg") 0 0 repeat-x;
 }
@@ -39,7 +38,6 @@ a {
     position: relative;
 }
 
-/*输入框里默认输入字体*/
 ::-webkit-input-placeholder {
     color: rgb(190, 188, 188);
     /*font-style: italic;*/
@@ -84,7 +82,6 @@ input {
 
 }
 
-/*输入框得到焦点的效果*/
 .inputbox input:active, .vendorAdd input:focus,
 .inputbox input:focus {
     border: 1px solid rgba(91, 90, 90, 0.7);
@@ -98,7 +95,6 @@ input {
     margin-left: 70px;
 }
 
-/*/!*登录页登录和重置按钮*!/.vendorView a是供应商管理页面下信息查看也得back按钮的样式*/
 input[type='submit'], input[type='reset'], .vendorView a {
     width: 30%;
     cursor: pointer;
@@ -139,7 +135,6 @@ input[type='reset']:active, input[type='reset']:focus, .vendorView a:hover, .ven
     box-shadow: 0px 1px 6px 4px rgba(0, 0, 0, 0.2) inset;
 }
 
-/*欢迎登录页*/
 .wColck {
     width: 88px;
     height: 108px;
@@ -150,6 +145,11 @@ input[type='reset']:active, input[type='reset']:focus, .vendorView a:hover, .ven
 .wFont {
     float: left;
     margin-top: 50px;
+}
+
+.wFont .title {
+    text-align: center;
+    font-size: 30px;
 }
 
 .wFont h2 {
@@ -164,7 +164,6 @@ input[type='reset']:active, input[type='reset']:focus, .vendorView a:hover, .ven
     color: #5a656c;
 }
 
-/*供应商管理页面*/
 .vendorTable {
     width: 100%;
     border: 1px solid #ccc;
@@ -200,7 +199,6 @@ input[type='reset']:active, input[type='reset']:focus, .vendorView a:hover, .ven
 
 }
 
-/*供应商管理页面-->下面的信息查看页面*/
 .vendorView {
     margin: 20px 0;
     font-size: 18px;
@@ -225,7 +223,6 @@ input[type='reset']:active, input[type='reset']:focus, .vendorView a:hover, .ven
     top: 60px;
 }
 
-/*供应商管理页面-->供应商添加页面*/
 .vendorAdd {
     border: 1px solid #9ac70f;
     padding: 20px;
@@ -271,7 +268,6 @@ input[type='reset']:active, input[type='reset']:focus, .vendorView a:hover, .ven
     color: #faca0d;
 }
 
-/*验证错误*/
 .vendorAdd .error span {
     color: red;
 }
@@ -280,7 +276,6 @@ input[type='reset']:active, input[type='reset']:focus, .vendorView a:hover, .ven
     border: 1px solid red;
 }
 
-/*验证成功*/
 .vendorAdd .ok span {
     color: green;
 }
@@ -331,9 +326,8 @@ input[type='reset']:active, input[type='reset']:focus, .vendorView a:hover, .ven
     box-shadow: none;
 }
 
-/*点击删除按钮后弹出的层*/
-.zhezhao {
-    display: none;          /* 修改这里可以让遮罩层消失*/
+.popup {
+    display: none;
     position: absolute;
     top: 0;
     left: 0;
@@ -345,7 +339,7 @@ input[type='reset']:active, input[type='reset']:focus, .vendorView a:hover, .ven
     overflow: hidden;
 }
 .remove{
-   display: none;       /* 修改这里可以让删除框消失*/
+   display: none;
     width: 400px;
     height: 190px;
     position: absolute;

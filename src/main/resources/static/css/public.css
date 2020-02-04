@@ -18,7 +18,6 @@ li{
     list-style: none;
 }
 
-/*公共样式，头部*/
 .publicHeader{
     height: 48px;
     line-height: 48px;
@@ -32,10 +31,7 @@ li{
     float: left;
     color: #fff;
     font-size: 22px;
-    padding-left:80px;
-    text-shadow: 2px 1px #000;
-    background: url("../img/buy.png") 30px center no-repeat;
-
+    padding-left:20px;
 }
 .publicHeaderR{
     float: right;
@@ -86,14 +82,13 @@ li{
     color: #626367;
 }
 
-/*公共部分主体内容*/
 .publicMian{
     border-top: 1px solid #c2ccd5;
-    display: flex;  /*变为弹性盒模型*/
+    display: flex;
     display: -webkit-flex;
     background: #fff;
 }
-/*左边*/
+
 .left{
     width: 168px;
     background: url("../img/leftBg.png") 0 0 repeat-y;
@@ -111,15 +106,15 @@ li{
     color: #fff;
     background: #60b3e7;
     margin: 10px  auto;
-    box-shadow:4px 4px rgba(212,212,212,0.7);
+    /*box-shadow:4px 4px rgba(212,212,212,0.7);*/
 }
-.leftH2 span{
-    width: 10px;
-    height: 10px;
-    display: inline-block;
-    background: radial-gradient(#70c2f4,#3a8dc1, #035384, #4696c7,#83d1f5);
-    border-radius: 50%;
-}
+/*.leftH2 span{*/
+/*    width: 10px;*/
+/*    height: 10px;*/
+/*    display: inline-block;*/
+/*    background: radial-gradient(#70c2f4,#3a8dc1, #035384, #4696c7,#83d1f5);*/
+/*    border-radius: 50%;*/
+/*}*/
 .span1{
     margin-right: 10px;
 }
@@ -137,19 +132,19 @@ li{
     border-bottom: 1px solid rgba(212,212,212,0.5) ;
 }
 .list li:nth-child(1){
-    background: url("../img/zd.png") 0  center no-repeat;
+    background: url("../img/bill.png") 0  center no-repeat;
 }
 .list li:nth-child(2){
-    background: url("../img/gys.png") 0  center no-repeat;
+    background: url("../img/vendor.png") 0  center no-repeat;
 }
 .list li:nth-child(3){
-    background: url("../img/yh.png") 0  center no-repeat;
+    background: url("../img/users.png") 0  center no-repeat;
 }
 .list li:nth-child(4){
-    background: url("../img/mm.png") 0  center no-repeat;
+    background: url("../img/password.png") 0  center no-repeat;
 }
 .list li:nth-child(5){
-    background: url("../img/tc.png") 0  center no-repeat;
+    background: url("../img/exit.png") 0  center no-repeat;
 }
 .list li:hover{
     background-color: #acd5f5;
@@ -166,12 +161,10 @@ li{
     width: 90%;
 }
 
-
-/*右边*/
 .right{
     width: 85%;
 }
-/*右边所在位置栏*/
+
 .location{
     height: 30px;
     line-height: 30px;
@@ -190,7 +183,7 @@ li{
     color: #2179a9;
     font-weight:  bold;
 }
-/*搜索信息栏*/
+
 .search{
     height:50px;
     line-height:50px;
@@ -250,7 +243,6 @@ li{
     outline: none;
 }
 
-/*底部*/
 .footer{
     width: 100%;
     line-height: 40px;
