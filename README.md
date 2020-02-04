@@ -13,7 +13,7 @@ The page will reload if you make edits in classpath.<br>
 
 ### `npm run build`
 
-![Bill System](bill/src/main/resources/static/img/README1.png)
+![Admin System](./src/main/resources/static/img/README1.png)
 
 ## Mapped Contents Local Directory
 
