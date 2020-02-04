@@ -7,13 +7,14 @@ a {
 	color: white;
 }
 .login_bg {
-    background: url("../img/loginBg.jpg") 0 0 repeat-x;
+    /*background: url("../img/loginBg.jpg") 0 0 repeat-x;*/
+    background: #46494D;
 }
 
 .loginBox {
     width: 1000px;
     margin: 0 auto;
-    background: url("../img/login_bg.jpg") 0 0 no-repeat;
+    background: #46494D;
 }
 
 .loginHeader {
@@ -54,11 +55,12 @@ input {
 }
 
 .loginForm {
-    background: url("../img/formBg.png") 0 0 no-repeat;
+    /*background: url("../img/formBg.png") 0 0 no-repeat;*/
+    background: #fff;
     width: 320px;
     height: 140px;
     border-radius: 8px;
-    padding: 90px 38px 48px 30px;
+    padding: 50px 38px 50px 30px;
     /*border: 1px solid green;*/
 }
 
@@ -96,30 +98,17 @@ input {
 }
 
 input[type='submit'], input[type='reset'], .vendorView a {
-    width: 30%;
     cursor: pointer;
     background: #54a4d7;
     padding: 6px 18px;
-    font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
+    /*font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;*/
     color: #fff;
     font-size: 18px;
-    border: 1px solid #4682be;
-    margin-bottom: 10px;
+    border: 1px solid #54A4D7;
     margin-right: 22px;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
-    -webkit-box-shadow: 0px 1px 4px 4px rgba(0, 0, 0, 0.07) inset,
-    0px 0px 0px 3px rgb(254, 254, 254),
-    0px 5px 3px 3px rgb(210, 210, 210);
-    -moz-box-shadow: 0px 1px 4px 4px rgba(0, 0, 0, 0.07) inset,
-    0px 0px 0px 3px rgb(254, 254, 254),
-    0px 5px 3px 3px rgb(210, 210, 210);
-    box-shadow: 0px 1px 4px 4px rgba(0, 0, 0, 0.07) inset,
-    0px 0px 0px 3px rgb(254, 254, 254),
-    0px 5px 3px 3px rgb(210, 210, 210);
-
 }
 
 input[type='submit']:hover, input[type='reset']:hover {

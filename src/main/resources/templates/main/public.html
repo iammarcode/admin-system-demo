@@ -12,7 +12,7 @@
     <h1>Admin System</h1>
 
     <div class="publicHeaderR">
-        <p><span style="color: #fff21b" th:text="${session.loginUser.username}"></span>, Welcome！</p>
+        <p><span style="color: #60B3E7" th:text="${session.loginUser.username}"></span>, Welcome！</p>
         <a href="/logout">Exit</a>
     </div>
 </header>
@@ -24,7 +24,7 @@
 <!--Main-->
 <section class="publicMian ">
     <div class="left" id="public_left">
-        <h2 class="leftH2"><span class="span1"></span>Features<span></span></h2>
+<!--        <h2 class="leftH2"><span class="span1"></span>Features<span></span></h2>-->
         <nav>
             <ul class="list">
                 <li th:id="${activeUri == 'bill' ? 'active': ''}" id="active"><a th:href="@{/bills}" >Bills</a></li>

@@ -56,8 +56,8 @@
                 <td th:text="${b.vendorName}"></td>
                 <td th:text="${#dates.format(b.createdDate, 'yyyy-MM-dd')}"></td>
                 <td>
-                    <a th:href="@{/bill/} + ${b.bid}"><img th:src="@{/img/check.png}" src="../img/read.png"/></a>
-                    <a th:href="@{/bill/} + ${b.bid} +'?type=update'"><img th:src="@{/img/update.png}" src="../img/xiugai.png"/></a>
+                    <a th:href="@{/bill/} + ${b.bid}"><img th:src="@{/img/check.png}" src="../img/check.png"/></a>
+                    <a th:href="@{/bill/} + ${b.bid} +'?type=update'"><img th:src="@{/img/update.png}" src="../img/update.png"/></a>
                     <a th:attr="del_uri=@{/bill/}+${b.bid}"  href="#" class="delete" ><img th:src="@{/img/delete.png}"  src="../img/delete.png" /></a>
                 </td>
             </tr>
