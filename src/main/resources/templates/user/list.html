@@ -12,7 +12,7 @@
         </div>
         <div class="right">
             <div class="location">
-                <strong th:replace="main/public :: #public_location"></strong>
+                <strong>Location:</strong>
                 <span>Users</span>
             </div>
             <form id="searchUser" th:action="@{/users}" th:method="get">
@@ -25,13 +25,13 @@
             </form>
 
             <!--用户-->
-            <table class="providerTable" cellpadding="0" cellspacing="0">
+            <table class="vendorTable" cellpadding="0" cellspacing="0">
                 <tr class="firstTr">
                     <th width="10%">Username</th>
                     <th width="20%">Realname</th>
                     <th width="10%">Gender</th>
                     <th width="10%">Birthday</th>
-                    <th width="10%">UserType</th>
+                    <th width="10%">Role</th>
                     <th width="30%">Operation</th>
                 </tr>
                 <tr th:each="u : ${users}">
@@ -39,11 +39,11 @@
                     <td th:text="${u.realName}"></td>
                     <td th:text="${u.gender == 1 ? 'female' : 'male'}"></td>
                     <td th:text="${#dates.format(u.birthday,'yyyy/mm/dd')}"></td>
-                    <td th:text="${u.userType == 1 ? 'admin' : (u.userType == 2 ? 'manager' : 'user')}"></td>
+                    <td th:text="${u.role == 1 ? 'manager' : (u.role == 2 ? 'editor' : 'guest')}"></td>
                     <td>
-                        <a th:href="@{/user/} + ${u.id}"><img src="../img/read.png" alt="view" /></a>
-                        <a th:href="@{/user/} + ${u.id} + '?type=update'"><img src="../img/xiugai.png" alt="update"/></a>
-                        <a th:attr="del_uri=@{/user/} + ${u.id}" class="delete"><img src="../img/schu.png" alt="delete"/></a>
+                        <a th:href="@{/user/} + ${u.id}"><img src="../img/check.png" alt="view" /></a>
+                        <a th:href="@{/user/} + ${u.id} + '?type=update'"><img src="../img/update.png" alt="update"/></a>
+                        <a th:attr="del_uri=@{/user/} + ${u.id}" class="delete"><img src="../img/delete.png" alt="delete"/></a>
                     </td>
                 </tr>
             </table>

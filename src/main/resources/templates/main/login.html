@@ -2,16 +2,16 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head lang="en">
     <meta charset="UTF-8">
-    <title>系统登录 - 梦学谷账单管理系统</title>
+    <title>Bill System Login</title>
     <link rel="stylesheet" href="../css/style.css"/>
 </head>
 <body class="login_bg">
     <section class="loginBox">
         <header class="loginHeader">
-            <h1>梦学谷账单管理系统</h1>
+            <h1>Bill System Login</h1>
         </header>
         <section class="loginCont">
-			<div th:if="${not #strings.isEmpty(msg)}" th:text="${msg}" style="color:red; margin-left: 130px">用户名错误！</div>
+			<div th:if="${not #strings.isEmpty(msg)}" th:text="${msg}" style="color:red; margin-left: 130px">incorrect username！</div>
             <form class="loginForm" th:action="@{/login}" th:method="post">
 				
                 <div class="inputbox">
@@ -32,7 +32,7 @@
                 </div>
 				<br/>
 				<div style="margin-left: 100px;">
-                    <a href="#" th:href="@{/index.html(l='zh_CN')}">中文</a>
+                    <a href="#" th:href="@{/index.html(l='zh_HK')}">中文</a>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <a href="#" th:href="@{/index.html(l='en_US')}">English</a>
                 </div>

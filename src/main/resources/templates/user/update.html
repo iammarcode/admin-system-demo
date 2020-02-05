@@ -15,10 +15,10 @@
     </div>
     <div class="right">
         <div class="location">
-            <strong th:replace="main/public :: #public_location"></strong>
+            <strong>Your Location:</strong>
             <span>Users >> update</span>
         </div>
-        <div class="providerAdd">
+        <div class="vendorAdd">
             <form th:action="@{/user}" id="updateForm" method="post">
                 <!--div的class 为error是验证错误，ok是验证成功-->
                 <input type="hidden" name="_method" value="put">
@@ -47,13 +47,13 @@
                 </div>
                 <div>
                     <label >User Type：</label>
-                    <input type="radio" name="userType" value="1" th:checked="${user.userType == 1}" />Admin
-                    <input type="radio" name="userType" value="2" th:checked="${user.userType == 2}" />Manager
-                    <input type="radio" name="userType" value="3" th:checked="${user.userType == 3}" />User
+                    <input type="radio" name="role" value="1" th:checked="${user.role == 1}" />Admin
+                    <input type="radio" name="role" value="2" th:checked="${user.role == 2}" />Manager
+                    <input type="radio" name="role" value="3" th:checked="${user.role == 3}" />User
                 </div>
-                <div class="providerAddBtn">
-                    <input type="button" value="保存" onclick="$('#updateForm').submit()"/>
-                    <input type="button" value="返回" onclick="history.back(-1)"/>
+                <div class="vendorAddBtn">
+                    <input type="button" value="save" onclick="$('#updateForm').submit()"/>
+                    <input type="button" value="back" onclick="history.back(-1)"/>
                 </div>
             </form>
         </div>

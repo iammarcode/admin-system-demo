@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.bill.mapper.VendorMapper">
+    <select id="getVendors" resultType="com.example.bill.entities.Vendor">
+        select * from vendor where 1=1
+        <if test="vendorName != null and vendorName != ''">
+            and vendor_name like '%${vendorName}%'
+        </if>
+    </select>
+
+    <select id="getVendorByPid" resultType="com.example.bill.entities.Vendor">
+        select * from vendor where vid=#{vid}
+    </select>
+
+    <insert id="addVendor">
+        INSERT INTO vendor ( `vendor_name`, `telephone`, `address`, `fax`, `describe`, `created_date`)
+        VALUES ( #{vendorName}, #{telephone}, #{address}, #{fax}, #{describe}, now())
+    </insert>
+
+    <update id="updateVendor">
+        UPDATE vendor
+        SET  vendor_name=#{vendorName},
+         telephone=#{telephone}, address=#{address}, fax=#{fax}, `describe`=#{describe}, created_date=now()
+        WHERE vid=#{vid}
+    </update>
+
+    <delete id="deleteVendorByPid">
+        delete from vendor where vid = #{vid}
+    </delete>
+
+</mapper>

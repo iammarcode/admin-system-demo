@@ -25,13 +25,13 @@
         UPDATE `user`
         SET `username`=#{username}, `real_name`=#{realName},
         `password`=#{password}, `gender`=#{gender}, `birthday`=#{birthday},
-        `user_type`=#{userType}
+        `role`=#{role}
         WHERE `id`=#{id}
     </update>
 
     <insert id="addUser" >
-        INSERT INTO `user` ( `username`, `real_name`, `password`, `gender`, `birthday`, `user_type`)
-        VALUES ( #{username}, #{realName}, #{password}, #{gender}, #{birthday}, #{userType})
+        INSERT INTO `user` ( `username`, `real_name`, `password`, `gender`, `birthday`, `role`)
+        VALUES ( #{username}, #{realName}, #{password}, #{gender}, #{birthday}, #{role})
     </insert>
 
     <delete id="deleteUserById">

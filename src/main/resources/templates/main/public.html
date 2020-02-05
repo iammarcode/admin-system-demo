@@ -12,8 +12,8 @@
     <h1>Admin System</h1>
 
     <div class="publicHeaderR">
-        <p><span style="color: #fff21b" th:text="${session.loginUser.username}"></span>, Welcome！</p>
-        <a href="/logout">LogOut</a>
+        <p><span style="color: #60B3E7" th:text="${session.loginUser.username}"></span>, Welcome！</p>
+        <a href="/logout">Exit</a>
     </div>
 </header>
 <!--Time-->
@@ -24,11 +24,11 @@
 <!--Main-->
 <section class="publicMian ">
     <div class="left" id="public_left">
-        <h2 class="leftH2"><span class="span1"></span>Features<span></span></h2>
+<!--        <h2 class="leftH2"><span class="span1"></span>Features<span></span></h2>-->
         <nav>
             <ul class="list">
                 <li th:id="${activeUri == 'bill' ? 'active': ''}" id="active"><a th:href="@{/bills}" >Bills</a></li>
-                <li th:id="${activeUri == 'provider' ? 'active': ''}" ><a th:href="@{/providers}" >Providers</a></li>
+                <li th:id="${activeUri == 'vendor' ? 'active': ''}" ><a th:href="@{/vendors}" >Vendors</a></li>
                 <li th:id="${activeUri == 'user' ? 'active': ''}"><a th:href="@{/users}" >Users</a></li>
                 <li th:id="${activeUri == 'pwd' ? 'active': ''}" ><a th:href="@{/user/pwd}" >Password</a></li>
                 <li ><a th:href="@{/logout}" >LogOut</a></li>
@@ -36,59 +36,10 @@
         </nav>
     </div>
     <div class="right">
-        <div class="location">
-            <strong id="public_location">Location:</strong>
-            <span></span>
-        </div>
-        <div class="search">
-            <span>供应商名称：</span>
-            <input type="text" placeholder="请输入供应商的名称"/>
-            <input type="button" value="查询"/>
-            <a th:href="@{/add}">添加供应商</a>
-        </div>
-        <!--供应商操作表格-->
-        <table class="providerTable" cellpadding="0" cellspacing="0">
-            <tr class="firstTr">
-                <th width="10%">供应商编码</th>
-                <th width="20%">供应商名称</th>
-                <th width="10%">联系人</th>
-                <th width="10%">联系电话</th>
-                <th width="10%">传真</th>
-                <th width="10%">创建时间</th>
-                <th width="30%">操作</th>
-            </tr>
-            <tr>
-                <td>PRO-CODE—001</td>
-                <td>测试供应商001</td>
-                <td>韩露</td>
-                <td>15918230478</td>
-                <td>15918230478</td>
-                <td>2015-11-12</td>
-                <td>
-                    <a href="view.html"><img th:src="@{/img/read.png}" alt="查看" title="查看"/></a>
-                    <a href="update.html"><img th:src="@{/img/xiugai.png}" alt="修改" title="修改"/></a>
-                    <a href="#" class="delete" ><img th:src="@{/img/schu.png}" alt="删除" title="删除"/></a>
-                </td>
-            </tr>
-            <tr>
-                <td>PRO-CODE—001</td>
-                <td>测试供应商001</td>
-                <td>韩露</td>
-                <td>15918230478</td>
-                <td>15918230478</td>
-                <td>2015-11-12</td>
-                <td>
-                    <a href="view.html"><img th:src="@{/img/read.png}" alt="查看" title="查看"/></a>
-                    <a href="update.html"><img th:src="@{/img/xiugai.png}" alt="修改" title="修改"/></a>
-                    <a href="#" class="delete" ><img th:src="@{/img/schu.png}" alt="删除" title="删除"/></a>
-                </td>
-            </tr>
-        </table>
 
     </div>
 </section>
 
-<!--点击删除按钮后弹出的页面-->
 <div class="zhezhao"></div>
 <form method="post" id="deleteForm">
     <input type="hidden" name="_method" value="delete">

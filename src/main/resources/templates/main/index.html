@@ -9,23 +9,18 @@
 <!--Time-->
 <section class="publicTime" th:replace="main/public :: #public_time">
 </section>
-<!--主体内容-->
+<!--Main-->
 <section class="publicMian">
     <div class="left" th:replace="main/public :: #public_left">
     </div>
     <div class="right">
-        <img class="wColck" src="../img/clock.jpg" alt=""/>
         <div class="wFont">
-            <h2 th:text="${session.loginUser.username}"></h2>
-            <p>Welcome to Admin System!</p>
+            <p class="title"><span th:text="${session.loginUser.username}"></span>, Welcome to Bill Admin System!</p>
 			<span id="hours"></span>
         </div>
     </div>
 </section>
 <footer class="footer" th:replace="main/public :: #public_footer"></footer>
-<!--
-	<script src="js/time.js"></script>
-	-->
 
 </body>
 </html>

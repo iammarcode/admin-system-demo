@@ -11,19 +11,19 @@
 </section>
 <!--Main-->
 <section class="publicMian ">
-    <div class="left" th:replace="main/public :: #public_left(activeUri='provider')">
+    <div class="left" th:replace="main/public :: #public_left(activeUri='vendor')">
     </div>
     <div class="right">
         <div class="location">
-            <strong th:replace="main/public :: #public_location"></strong>
+            <strong>Your Location:</strong>
             <span>Users >> view</span>
         </div>
-        <div class="providerView">
+        <div class="vendorView">
             <p><strong>username：</strong><span th:text="${user.username}"></span></p>
             <p><strong>realname：</strong><span th:text="${user.realName}"></span></p>
             <p><strong>gender：</strong><span th:text="${user.gender}"></span></p>
             <p><strong>birthday：</strong><span th:text="${user.birthday}"></span></p>
-            <p><strong>usertype：</strong><span th:text="${user.userType == 1 ? 'admin' : (user.userType == 2 ? 'manager' : 'user')}"></span></p>
+            <p><strong>usertype：</strong><span th:text="${user.role == 1 ? 'admin' : (user.role == 2 ? 'manager' : 'user')}"></span></p>
             <a onclick="history.back(-1)" href="#">Back</a>
         </div>
     </div>

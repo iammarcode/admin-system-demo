@@ -6,52 +6,20 @@ import java.util.Date;
 public class Bill {
 
     private Integer bid;
-    private String billCode;
-    private String billName;
-    private String billCom;
-    private Integer billNum;
-    private Double money;
-    private Provider provider;
-    private Integer pay;
-    private Date createDate;
+    private Double total;
+    private Integer paid;
+    private Date createdDate;
+    private Integer vid;
 
-    private Integer pid;
-
-    public Integer getPid() {
-        return pid;
+    public Bill() {
     }
 
-    public void setPid(Integer pid) {
-        this.pid = pid;
-    }
-
-    public Bill() {}
-
-    public Bill(Integer bid, String billCode, String billName, String billCom, Integer billNum, Double money, Provider provider, Integer pay) {
+    public Bill(Integer bid, Double total, Integer paid, Date createdDate, Integer vid) {
         this.bid = bid;
-        this.billCode = billCode;
-        this.billName = billName;
-        this.billCom = billCom;
-        this.billNum = billNum;
-        this.money = money;
-        this.provider = provider;
-        this.pay = pay;
-        this.createDate = new Date();
-    }
-
-    @Override
-    public String toString() {
-        return "Bill{" +
-                "bid=" + bid +
-                ", billCode='" + billCode + '\'' +
-                ", billName='" + billName + '\'' +
-                ", billCom='" + billCom + '\'' +
-                ", billNum=" + billNum +
-                ", money=" + money +
-                ", provider=" + provider +
-                ", pay=" + pay +
-                ", createDate=" + createDate +
-                '}';
+        this.total = total;
+        this.paid = paid;
+        this.createdDate = createdDate;
+        this.vid = vid;
     }
 
     public Integer getBid() {
@@ -62,67 +30,35 @@ public class Bill {
         this.bid = bid;
     }
 
-    public String getBillCode() {
-        return billCode;
+    public Double getTotal() {
+        return total;
     }
 
-    public void setBillCode(String billCode) {
-        this.billCode = billCode;
+    public void setTotal(Double total) {
+        this.total = total;
     }
 
-    public String getBillName() {
-        return billName;
+    public Integer getPaid() {
+        return paid;
     }
 
-    public void setBillName(String billName) {
-        this.billName = billName;
+    public void setPaid(Integer paid) {
+        this.paid = paid;
     }
 
-    public String getBillCom() {
-        return billCom;
+    public Date getCreatedDate() {
+        return createdDate;
     }
 
-    public void setBillCom(String billCom) {
-        this.billCom = billCom;
+    public void setCreatedDate(Date createdDate) {
+        this.createdDate = createdDate;
     }
 
-    public Integer getBillNum() {
-        return billNum;
+    public Integer getVid() {
+        return vid;
     }
 
-    public void setBillNum(Integer billNum) {
-        this.billNum = billNum;
-    }
-
-    public Double getMoney() {
-        return money;
-    }
-
-    public void setMoney(Double money) {
-        this.money = money;
-    }
-
-    public Provider getProvider() {
-        return provider;
-    }
-
-    public void setProvider(Provider provider) {
-        this.provider = provider;
-    }
-
-    public Integer getPay() {
-        return pay;
-    }
-
-    public void setPay(Integer pay) {
-        this.pay = pay;
-    }
-
-    public Date getCreateDate() {
-        return createDate;
-    }
-
-    public void setCreateDate(Date createDate) {
-        this.createDate = createDate;
+    public void setVid(Integer vid) {
+        this.vid = vid;
     }
 }

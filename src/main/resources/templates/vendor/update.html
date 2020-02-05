@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en" th:replace="main/public :: #public_head">
+</head>
+<body>
+<!--Header-->
+<header class="publicHeader" th:replace="main/public :: #public_header">
+</header>
+<!--Time-->
+<section class="publicTime" th:replace="main/public :: #public_time">
+</section>
+<!--Main-->
+<section class="publicMian ">
+    <div class="left" th:replace="main/public :: #public_left(activeUri='vendor')">
+    </div>
+    <div class="right">
+        <div class="location">
+            <strong>Location:</strong>
+            <span>vendor >> udpate</span>
+        </div>
+        <div class="vendorAdd">
+            <form th:action="@{/vendor}" id="updateForm" method="post">
+                <input th:type="hidden" name="_method" value="put">
+                <input th:type="hidden" name="vid" th:value="${vendor.vid}">
+
+                <div class="">
+                    <label for="vendorName">vendor name：</label>
+                    <input type="text" th:value="${vendor.vendorName}" name="vendorName" id="vendorName" placeholder="测试供应商001"/>
+                    <span >*</span>
+                </div>
+
+                <div>
+                    <label for="telephone">telephone：</label>
+                    <input type="text" th:value="${vendor.telephone}" name="telephone" id="telephone" placeholder="15918230478"/>
+                    <span></span>
+                </div>
+                <div>
+                    <label for="address">address：</label>
+                    <input type="text" th:value="${vendor.address}" name="address" id="address" placeholder="北京"/>
+                    <span></span>
+
+                </div>
+                <div>
+                    <label for="fax">fax：</label>
+                    <input type="text" th:value="${vendor.fax}" name="fax" id="fax" placeholder="15918230478"/>
+                    <span></span>
+
+                </div>
+                <div>
+                    <label for="describe">describe：</label>
+                    <input type="text" th:value="${vendor.describe}" name="describe" id="describe" placeholder="describe"/>
+                    <span></span>
+
+                </div>
+                <div class="vendorAddBtn">
+                    <!--<a href="#">save</a>-->
+                    <!--<a href="vendorList.html">back</a>-->
+                    <input type="button" value="save" onclick="$('#updateForm').submit()"/>
+                    <input type="button" value="back" onclick="history.back(-1)"/>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</section>
+<footer class="footer" th:replace="main/public :: #public_footer">
+</footer>
+<script src="../js/jquery.js"></script>
+
+</body>
+</html>
