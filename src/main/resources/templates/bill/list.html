@@ -21,10 +21,10 @@
         <form id="searchForm" th:action="@{/bills}" th:method="get" >
             <div class="search" >
 
-                <span>Vendor：</span>
+                <span>Media：</span>
                 <select name="vid" >
                     <option value="">--Select--</option>
-                    <option value="" th:selected="${v.vid == vid}" th:each="v : ${vendors}"  th:value="${v.vid}" th:text="${v.vendorName}" ></option>
+                    <option value="" th:selected="${v.vid == vid}" th:each="v : ${medias}"  th:value="${v.vid}" th:text="${v.mediaName}" ></option>
                     </option>
                 </select>
 
@@ -40,20 +40,20 @@
             </div>
         </form>
 
-        <table class="vendorTable" cellpadding="0" cellspacing="0">
+        <table class="mediaTable" cellpadding="0" cellspacing="0">
             <tr class="firstTr">
                 <th width="10%">Id</th>
                 <th width="10%">Total</th>
                 <th width="10%">Paid</th>
-                <th width="20%">Vendor</th>
+                <th width="20%">Media</th>
                 <th width="10%">Created Time</th>
                 <th width="30%">Operation</th>
             </tr>
-            <tr th:each="b : ${billVendors}">
+            <tr th:each="b : ${billMedias}">
                 <td th:text="${b.bid}"></td>
                 <td th:text="${b.total}"></td>
                 <td th:text="${b.paid == 1 ? 'Yes' : 'No'}"></td>
-                <td th:text="${b.vendorName}"></td>
+                <td th:text="${b.mediaName}"></td>
                 <td th:text="${#dates.format(b.createdDate, 'yyyy-MM-dd')}"></td>
                 <td>
                     <a th:href="@{/bill/} + ${b.bid}"><img th:src="@{/img/check.png}" src="../img/check.png"/></a>

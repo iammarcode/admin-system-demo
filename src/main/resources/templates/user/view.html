@@ -11,14 +11,14 @@
 </section>
 <!--Main-->
 <section class="publicMian ">
-    <div class="left" th:replace="main/public :: #public_left(activeUri='vendor')">
+    <div class="left" th:replace="main/public :: #public_left(activeUri='media')">
     </div>
     <div class="right">
         <div class="location">
             <strong>Your Location:</strong>
             <span>Users >> view</span>
         </div>
-        <div class="vendorView">
+        <div class="mediaView">
             <p><strong>username：</strong><span th:text="${user.username}"></span></p>
             <p><strong>realname：</strong><span th:text="${user.realName}"></span></p>
             <p><strong>gender：</strong><span th:text="${user.gender}"></span></p>

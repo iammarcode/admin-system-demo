@@ -1,10 +1,10 @@
 package com.example.bill.controller;
 
 import com.example.bill.entities.Bill;
-import com.example.bill.entities.BillVendor;
-import com.example.bill.entities.Vendor;
+import com.example.bill.entities.BillMedia;
+import com.example.bill.entities.Media;
 import com.example.bill.mapper.BillMapper;
-import com.example.bill.mapper.VendorMapper;
+import com.example.bill.mapper.MediaMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +20,7 @@ public class BillController {
     Logger logger = LoggerFactory.getLogger(getClass());
 
     @Autowired
-    VendorMapper vendorMapper;
+    MediaMapper mediaMapper;
 
     @Autowired
     BillMapper billMapper;
@@ -28,12 +28,12 @@ public class BillController {
     @GetMapping("/bills")
     public String list(Map<String, Object> map, Bill bill) {
 
-        List<BillVendor> billVendors = billMapper.getBills(bill);
+        List<BillMedia> billMedias = billMapper.getBills(bill);
 
-        List<Vendor> vendors = vendorMapper.getVendors(null);
+        List<Media> medias = mediaMapper.getMedias(null);
 
-        map.put("billVendors", billVendors);
-        map.put("vendors", vendors);
+        map.put("billMedias", billMedias);
+        map.put("medias", medias);
 
         map.put("vid", bill.getVid());
         map.put("paid", bill.getPaid());
@@ -47,14 +47,14 @@ public class BillController {
                        @RequestParam(value = "type", defaultValue = "view") String type,
                        Map<String, Object> map) {
 
-        BillVendor billVendor = billMapper.getBillByBid(bid);
+        BillMedia billMedia = billMapper.getBillByBid(bid);
 
         if ("update".equals(type)) {
-            List<Vendor> vendors = vendorMapper.getVendors(null);
-            map.put("vendors",vendors);
+            List<Media> medias = mediaMapper.getMedias(null);
+            map.put("medias",medias);
         }
 
-        map.put("billVendor", billVendor);
+        map.put("billMedia", billMedia);
 
         return "bill/" + type;
     }
@@ -78,8 +78,8 @@ public class BillController {
     @GetMapping("/bill")
     public String toAddPage(Map<String, Object> map) {
 
-        List<Vendor> vendors = vendorMapper.getVendors(null);
-        map.put("vendors", vendors);
+        List<Media> medias = mediaMapper.getMedias(null);
+        map.put("medias", medias);
 
         return "bill/add";
     }

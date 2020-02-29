@@ -614,7 +614,7 @@ jQuery.extend({
 	},
 
 	// Convert dashed to camelCase; used by the css and data modules
-	// Microsoft forgot to hump their vendor prefix (#9572)
+	// Microsoft forgot to hump their media prefix (#9572)
 	camelCase: function( string ) {
 		return string.replace( rmsPrefix, "ms-" ).replace( rdashAlpha, fcamelCase );
 	},
@@ -6812,15 +6812,15 @@ var iframe, getStyles, curCSS,
 	cssExpand = [ "Top", "Right", "Bottom", "Left" ],
 	cssPrefixes = [ "Webkit", "O", "Moz", "ms" ];
 
-// return a css property mapped to a potentially vendor prefixed property
-function vendorPropName( style, name ) {
+// return a css property mapped to a potentially media prefixed property
+function mediaPropName( style, name ) {
 
-	// shortcut for names that are not vendor prefixed
+	// shortcut for names that are not media prefixed
 	if ( name in style ) {
 		return name;
 	}
 
-	// check for vendor prefixed names
+	// check for media prefixed names
 	var capName = name.charAt(0).toUpperCase() + name.slice(1),
 		origName = name,
 		i = cssPrefixes.length;
@@ -6988,7 +6988,7 @@ jQuery.extend({
 			origName = jQuery.camelCase( name ),
 			style = elem.style;
 
-		name = jQuery.cssProps[ origName ] || ( jQuery.cssProps[ origName ] = vendorPropName( style, origName ) );
+		name = jQuery.cssProps[ origName ] || ( jQuery.cssProps[ origName ] = mediaPropName( style, origName ) );
 
 		// gets hook for the prefixed version
 		// followed by the unprefixed version
@@ -7047,7 +7047,7 @@ jQuery.extend({
 			origName = jQuery.camelCase( name );
 
 		// Make sure that we're working with the right name
-		name = jQuery.cssProps[ origName ] || ( jQuery.cssProps[ origName ] = vendorPropName( elem.style, origName ) );
+		name = jQuery.cssProps[ origName ] || ( jQuery.cssProps[ origName ] = mediaPropName( elem.style, origName ) );
 
 		// gets hook for the prefixed version
 		// followed by the unprefixed version

@@ -11,20 +11,20 @@
 </section>
 <!--Main-->
 <section class="publicMian ">
-    <div class="left" th:replace="main/public :: #public_left(activeUri='vendor')">
+    <div class="left" th:replace="main/public :: #public_left(activeUri='media')">
     </div>
     <div class="right">
         <div class="location">
             <strong>Location:</strong>
-            <span>vendor >> check</span>
+            <span>media >> check</span>
         </div>
-        <div class="vendorView">
-            <p><strong>vendor name：</strong><span th:text="${vendor.vendorName}"></span></p>
-            <p><strong>telephone：</strong><span th:text="${vendor.telephone}"></span></p>
-            <p><strong>fax：</strong><span th:text="${vendor.fax}"></span></p>
-            <p><strong>describe：</strong><span th:text="${vendor.describe}"></span></p>
+        <div class="mediaView">
+            <p><strong>media name：</strong><span th:text="${media.mediaName}"></span></p>
+            <p><strong>telephone：</strong><span th:text="${media.telephone}"></span></p>
+            <p><strong>fax：</strong><span th:text="${media.fax}"></span></p>
+            <p><strong>describe：</strong><span th:text="${media.describe}"></span></p>
 
-            <a th:href="@{/vendors}">back</a>
+            <a th:href="@{/medias}">back</a>
         </div>
     </div>
 </section>

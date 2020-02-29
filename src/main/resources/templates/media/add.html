@@ -11,19 +11,19 @@
 </section>
 <!--Main-->
 <section class="publicMian ">
-    <div class="left" th:replace="main/public :: #public_left(activeUri='vendor')">
+    <div class="left" th:replace="main/public :: #public_left(activeUri='media')">
     </div>
     <div class="right">
         <div class="location">
             <strong>Your Location:</strong>
-            <span>Bill System >> Add Vendor</span>
+            <span>Bill System >> Add Media</span>
         </div>
-        <div class="vendorAdd">
-            <form th:action="@{/vendor}" id="addForm" method="post">
+        <div class="mediaAdd">
+            <form th:action="@{/media}" id="addForm" method="post">
                 <div class="">
-                    <label for="vendorName">Vendor Name：</label>
-                    <input type="text" name="vendorName" id="vendorName"/>
-                    <span >*Vendor's Name</span>
+                    <label for="mediaName">Media Name：</label>
+                    <input type="text" name="mediaName" id="mediaName"/>
+                    <span >*Media's Name</span>
                 </div>
                 <div>
                     <label for="telephone">Telephone：</label>
@@ -44,7 +44,7 @@
                     <label for="describe">describe：</label>
                     <input type="text" name="describe" id="describe"/>
                 </div>
-                <div class="vendorAddBtn">
+                <div class="mediaAddBtn">
                     <input type="button" value="save" onclick="$('#addForm').submit()"/>
                     <input type="button" value="back" onclick="history.back(-1)"/>
                 </div>

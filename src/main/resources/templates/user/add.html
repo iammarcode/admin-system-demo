@@ -11,14 +11,14 @@
 </section>
 <!--Main-->
 <section class="publicMian ">
-    <div class="left" th:replace="main/public :: #public_left(activeUri='vendor')">
+    <div class="left" th:replace="main/public :: #public_left(activeUri='media')">
     </div>
     <div class="right">
         <div class="location">
             <strong>Your Location:</strong>
             <span>Users >> Add</span>
         </div>
-        <div class="vendorAdd">
+        <div class="mediaAdd">
             <form th:action="@{/user}" method="post" id="addForm">
 
                 <div class="">
@@ -62,7 +62,7 @@
                     <input type="radio" name="role" value="2" checked/>manager
                     <input type="radio" name="role" value="3"/>user
                 </div>
-                <div class="vendorAddBtn">
+                <div class="mediaAddBtn">
 
                     <input type="button" value="save" id="save"/>
                     <input type="button" value="back" onclick="history.back(-1)"/>

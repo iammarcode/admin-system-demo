@@ -18,12 +18,12 @@
             <strong>Location:</strong>
             <span>Bills >> check</span>
         </div>
-        <div class="vendorView">
-            <p><strong>Id：</strong><span th:text="${billVendor.bid}"></span></p>
-            <p><strong>Total：</strong><span th:text="${billVendor.total}"></span></p>
-            <p><strong>Vendor：</strong><span th:text="${billVendor.vendorName}"></span></p>
-            <p><strong>Paid：</strong><span th:text="${billVendor.paid == 1 ? 'Yes' : 'No'}"></span></p>
-            <p><strong>Created Time：</strong><span th:text="${#dates.format(billVendor.createdDate,'yyyy-mm-dd')}">2029/12/12 12:12:12</span></p>
+        <div class="mediaView">
+            <p><strong>Id：</strong><span th:text="${billMedia.bid}"></span></p>
+            <p><strong>Total：</strong><span th:text="${billMedia.total}"></span></p>
+            <p><strong>Media：</strong><span th:text="${billMedia.mediaName}"></span></p>
+            <p><strong>Paid：</strong><span th:text="${billMedia.paid == 1 ? 'Yes' : 'No'}"></span></p>
+            <p><strong>Created Time：</strong><span th:text="${#dates.format(billMedia.createdDate,'yyyy-mm-dd')}">2029/12/12 12:12:12</span></p>
 
             <a onclick="history.back(-1)" href="#">Back</a>
         </div>

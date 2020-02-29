@@ -18,7 +18,7 @@
             <strong>Your Location:</strong>
             <span>Bill System >> Add Bill</span>
         </div>
-        <div class="vendorAdd">
+        <div class="mediaAdd">
             <form id="addForm" th:action="@{/bill}" th:method="post" action="#">
                 <div>
                     <label for="total">Total：</label>
@@ -26,19 +26,19 @@
                     <span>*Please enter an integer</span>
                 </div>
                 <div>
-                    <label >Vendor：</label>
+                    <label >Media：</label>
                     <select name="vid" >
-                        <option value="">--Vendors--</option>
-                        <option value="" th:each="v : ${vendors}" th:value="${v.vid}" th:text="${v.vendorName}"></option>
+                        <option value="">--Medias--</option>
+                        <option value="" th:each="v : ${medias}" th:value="${v.vid}" th:text="${v.mediaName}"></option>
                     </select>
-                    <span>*Choose a vendor</span>
+                    <span>*Choose a media</span>
                 </div>
                 <div>
                     <label >Paid：</label>
                     <input type="radio" value="0" name="paid" checked />No
                     <input type="radio" value="1" name="paid"/>Yes
                 </div>
-                <div class="vendorAddBtn">
+                <div class="mediaAddBtn">
                     <input type="button" onclick="$('#addForm').submit();" value="save" />
                     <input type="button" value="back" onclick="history.back(-1)"/>
                 </div>

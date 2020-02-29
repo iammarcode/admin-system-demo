@@ -11,41 +11,41 @@
 </section>
 <!--Main-->
 <section class="publicMian">
-    <div class="left" th:replace="main/public :: #public_left(activeUri='vendor')">
+    <div class="left" th:replace="main/public :: #public_left(activeUri='media')">
     </div>
     <div class="right">
         <div class="location">
             <strong>Location:</strong>
-            <span>vendor</span>
+            <span>media</span>
         </div>
-        <form id="searchForm" th:action="@{/vendors}" th:method="get">
+        <form id="searchForm" th:action="@{/medias}" th:method="get">
             <div class="search">
-                <span>vendor name：</span>
-                <input type="text" placeholder="vendor name" th:value="${vendorName}" name="vendorName"/>
+                <span>media name：</span>
+                <input type="text" placeholder="media name" th:value="${mediaName}" name="mediaName"/>
                 <input type="button" value="search" onclick="$('#searchForm').submit()"/>
-                <a th:href="@{/vendor}">Add vendor</a>
+                <a th:href="@{/media}">Add media</a>
             </div>
         </form>
         <!--供应商操作表格-->
-        <table class="vendorTable" cellpadding="0" cellspacing="0">
+        <table class="mediaTable" cellpadding="0" cellspacing="0">
             <tr class="firstTr">
-                <th width="5%">vendor id</th>
-                <th width="20%">vendor name</th>
+                <th width="5%">media id</th>
+                <th width="20%">media name</th>
                 <th width="10%">telephone</th>
                 <th width="10%">fax</th>
                 <th width="10%">created date</th>
                 <th width="30%">operation</th>
             </tr>
-            <tr th:each="v : ${vendors}">
+            <tr th:each="v : ${medias}">
                 <td th:text="${v.vid}"></td>
-                <td th:text="${v.vendorName}"></td>
+                <td th:text="${v.mediaName}"></td>
                 <td th:text="${v.telephone}"></td>
                 <td th:text="${v.fax}"></td>
                 <td th:text="${#dates.format(v.createdDate, 'yyyy-MM-dd')}"></td>
                 <td>
-                    <a th:href="@{/vendor/} + ${v.vid}"><img th:src="@{/img/check.png}"/></a>
-                    <a th:href="@{/vendor/} + ${v.vid} + @{?type=update}"><img th:src="@{/img/update.png}"/></a>
-                    <a th:attr="del_uri=@{/vendor/} + ${v.vid}" class="delete" ><img th:src="@{/img/delete.png}"/></a>
+                    <a th:href="@{/media/} + ${v.vid}"><img th:src="@{/img/check.png}"/></a>
+                    <a th:href="@{/media/} + ${v.vid} + @{?type=update}"><img th:src="@{/img/update.png}"/></a>
+                    <a th:attr="del_uri=@{/media/} + ${v.vid}" class="delete" ><img th:src="@{/img/delete.png}"/></a>
                 </td>
             </tr>
         </table>

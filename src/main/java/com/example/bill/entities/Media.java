@@ -3,18 +3,18 @@ package com.example.bill.entities;
 import java.io.Serializable;
 import java.util.Date;
 
-public class Vendor implements Serializable {
+public class Media implements Serializable {
     private Integer vid;
-    private String vendorName;
+    private String mediaName;
     private String telephone;
     private String address;
     private String fax;
     private String describe;
     private Date createdDate;
 
-    public Vendor(Integer vid, String vendorName, String telephone, String address, String fax, String describe, Date createdDate) {
+    public Media(Integer vid, String mediaName, String telephone, String address, String fax, String describe, Date createdDate) {
         this.vid = vid;
-        this.vendorName = vendorName;
+        this.mediaName = mediaName;
         this.telephone = telephone;
         this.address = address;
         this.fax = fax;
@@ -22,7 +22,7 @@ public class Vendor implements Serializable {
         this.createdDate = createdDate;
     }
 
-    public Vendor() {
+    public Media() {
     }
 
     public Integer getVid() {
@@ -33,12 +33,12 @@ public class Vendor implements Serializable {
         this.vid = vid;
     }
 
-    public String getVendorName() {
-        return vendorName;
+    public String getMediaName() {
+        return mediaName;
     }
 
-    public void setVendorName(String vendorName) {
-        this.vendorName = vendorName;
+    public void setMediaName(String mediaName) {
+        this.mediaName = mediaName;
     }
 
     public String getTelephone() {
@@ -83,9 +83,9 @@ public class Vendor implements Serializable {
 
     @Override
     public String toString() {
-        return "Vendor{" +
+        return "Media{" +
                 "vid=" + vid +
-                ", vendorName='" + vendorName + '\'' +
+                ", mediaName='" + mediaName + '\'' +
                 ", telephone='" + telephone + '\'' +
                 ", address='" + address + '\'' +
                 ", fax='" + fax + '\'' +

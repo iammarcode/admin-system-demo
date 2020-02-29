@@ -18,20 +18,20 @@
             <strong>Location:</strong>
             <span>Bills >> Update</span>
         </div>
-        <div class="vendorAdd">
+        <div class="mediaAdd">
             <form th:action="@{/bill}" method="post" id="updateForm">
                 <input th:type="hidden" name="_method" value="PUT">
-                <input th:type="hidden" name="bid" th:value="${billVendor.bid}">
+                <input th:type="hidden" name="bid" th:value="${billMedia.bid}">
                 <div>
                     <label for="total">Total：</label>
-                    <input type="text" name="total" id="total" placeholder="" th:value="${billVendor.total}"/>
+                    <input type="text" name="total" id="total" placeholder="" th:value="${billMedia.total}"/>
                     <span>*</span>
                 </div>
                 <div>
-                    <label >Vendor：</label>
+                    <label >Media：</label>
                     <select name="vid" >
-                        <option>--select vendor--</option>
-                        <option th:each="v : ${vendors}" th:value="${v.vid}" th:text="${v.vendorName}" th:selected="${v.vid == billVendor.vid}"></option>
+                        <option>--select media--</option>
+                        <option th:each="v : ${medias}" th:value="${v.vid}" th:text="${v.mediaName}" th:selected="${v.vid == billMedia.vid}"></option>
                     </select>
                     <span>*</span>
                 </div>
@@ -40,7 +40,7 @@
                     <input type="radio" value="0" name="paid" checked />No
                     <input type="radio" value="1" name="paid"/>Yes
                 </div>
-                <div class="vendorAddBtn">
+                <div class="mediaAddBtn">
                     <input type="button" value="save" onclick="$('#updateForm').submit()"/>
                     <input type="button" value="back" onclick="history.back(-1)"/>
                 </div>

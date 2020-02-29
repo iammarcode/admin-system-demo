@@ -11,50 +11,50 @@
 </section>
 <!--Main-->
 <section class="publicMian ">
-    <div class="left" th:replace="main/public :: #public_left(activeUri='vendor')">
+    <div class="left" th:replace="main/public :: #public_left(activeUri='media')">
     </div>
     <div class="right">
         <div class="location">
             <strong>Location:</strong>
-            <span>vendor >> udpate</span>
+            <span>media >> udpate</span>
         </div>
-        <div class="vendorAdd">
-            <form th:action="@{/vendor}" id="updateForm" method="post">
+        <div class="mediaAdd">
+            <form th:action="@{/media}" id="updateForm" method="post">
                 <input th:type="hidden" name="_method" value="put">
-                <input th:type="hidden" name="vid" th:value="${vendor.vid}">
+                <input th:type="hidden" name="vid" th:value="${media.vid}">
 
                 <div class="">
-                    <label for="vendorName">vendor name：</label>
-                    <input type="text" th:value="${vendor.vendorName}" name="vendorName" id="vendorName" placeholder="测试供应商001"/>
+                    <label for="mediaName">media name：</label>
+                    <input type="text" th:value="${media.mediaName}" name="mediaName" id="mediaName" placeholder="测试供应商001"/>
                     <span >*</span>
                 </div>
 
                 <div>
                     <label for="telephone">telephone：</label>
-                    <input type="text" th:value="${vendor.telephone}" name="telephone" id="telephone" placeholder="15918230478"/>
+                    <input type="text" th:value="${media.telephone}" name="telephone" id="telephone" placeholder="15918230478"/>
                     <span></span>
                 </div>
                 <div>
                     <label for="address">address：</label>
-                    <input type="text" th:value="${vendor.address}" name="address" id="address" placeholder="北京"/>
+                    <input type="text" th:value="${media.address}" name="address" id="address" placeholder="北京"/>
                     <span></span>
 
                 </div>
                 <div>
                     <label for="fax">fax：</label>
-                    <input type="text" th:value="${vendor.fax}" name="fax" id="fax" placeholder="15918230478"/>
+                    <input type="text" th:value="${media.fax}" name="fax" id="fax" placeholder="15918230478"/>
                     <span></span>
 
                 </div>
                 <div>
                     <label for="describe">describe：</label>
-                    <input type="text" th:value="${vendor.describe}" name="describe" id="describe" placeholder="describe"/>
+                    <input type="text" th:value="${media.describe}" name="describe" id="describe" placeholder="describe"/>
                     <span></span>
 
                 </div>
-                <div class="vendorAddBtn">
+                <div class="mediaAddBtn">
                     <!--<a href="#">save</a>-->
-                    <!--<a href="vendorList.html">back</a>-->
+                    <!--<a href="mediaList.html">back</a>-->
                     <input type="button" value="save" onclick="$('#updateForm').submit()"/>
                     <input type="button" value="back" onclick="history.back(-1)"/>
                 </div>

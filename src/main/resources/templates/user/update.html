@@ -18,7 +18,7 @@
             <strong>Your Location:</strong>
             <span>Users >> update</span>
         </div>
-        <div class="vendorAdd">
+        <div class="mediaAdd">
             <form th:action="@{/user}" id="updateForm" method="post">
                 <!--div的class 为error是验证错误，ok是验证成功-->
                 <input type="hidden" name="_method" value="put">
@@ -51,7 +51,7 @@
                     <input type="radio" name="role" value="2" th:checked="${user.role == 2}" />Manager
                     <input type="radio" name="role" value="3" th:checked="${user.role == 3}" />User
                 </div>
-                <div class="vendorAddBtn">
+                <div class="mediaAddBtn">
                     <input type="button" value="save" onclick="$('#updateForm').submit()"/>
                     <input type="button" value="back" onclick="history.back(-1)"/>
                 </div>
